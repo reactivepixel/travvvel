@@ -1,0 +1,20 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+#gallery img{
+    max-width: 300px;
+    width: 0px;
+    
+    margin: .15em .25em;
+
+      -webkit-transition: all 0.3s ease-out;  /* Safari 3.2+, Chrome */
+     -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.3s ease-out;  /* Opera 10.5–12.00 */
+          transition: all 0.3s ease-out;  /* Firefox 16+, Opera 12.50+ */
+}
+.closed{
+  width: 0px;
+}
