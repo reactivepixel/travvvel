@@ -1,12 +1,20 @@
+body{
+  font-size: 14px;
+}
 *{
   margin: 0;
   padding: 0;
   text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  list-style: none;
 }
-
+#mainDisp{
+  margin: 1em auto;
+  text-align: center;
+  width: 300px;
+}
 #gallery img{
-    max-width: 300px;
-    width: 0px;
     
     margin: .15em .25em;
 
@@ -15,6 +23,31 @@
        -o-transition: all 0.3s ease-out;  /* Opera 10.5–12.00 */
           transition: all 0.3s ease-out;  /* Firefox 16+, Opera 12.50+ */
 }
-.closed{
-  width: 0px;
+
+.infoList li{
+  display: inline-block;
+  padding: 0 0 0 1.5em;
+  margin: 0 0 0 2em;
 }
+.infoList .likes{
+  background: url("http://dribbble.com/images/icon-hearts.png") no-repeat left center;
+}
+.infoList .views{
+  background: url("http://dribbble.com/images/icon-views.png") no-repeat left center;
+}
+.infoList .comments{
+  background: url("http://dribbble.com/images/icon-comments.png") no-repeat left top;
+}
+.infoList .title, .infoList .value{
+
+}
+.infoList .value{
+
+}
+
+/*
+http://dribbble.com/images/icon-views-2x.png
+http://dribbble.com/images/icon-comments-2x.png
+http://dribbble.com/images/icon-hearts-2x.png
+http://dribbble.com/images/icon-rebound-2x.png
+*/
