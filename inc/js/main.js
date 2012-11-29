@@ -72,7 +72,7 @@ function loadDribbleStream(){
 			dataStream = d;
 			maxPages = dataStream.pages;
 			nextImg();
-		//	intNext = setInterval(nextImg, durration_on_img);
+			intNext = setInterval(nextImg, durration_on_img);
 		},
 		error		: function(d){
 			console.log("failure", d);
