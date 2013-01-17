@@ -6,34 +6,104 @@ body{
   padding: 0;
   text-decoration: none;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #444;
   list-style: none;
 }
-#mainDisp{
-  margin: 1em auto;
-  text-align: center;
-  width: 300px;
-}
-#gallery img{
-    
-    margin: .15em .25em;
 
-      -webkit-transition: all 0.3s ease-out;  /* Safari 3.2+, Chrome */
+
+
+section{
+/* 	background: url('http://dribbble.s3.amazonaws.com/users/195619/screenshots/898396/dribbble_invite_800x600.png') no-repeat top center; */
+	background: #333;
+	
+	max-width: 49%;
+	margin: 1em 25% 1em 25%;
+	border-radius: 1em;
+	
+	  -webkit-box-shadow: 0px 0px 5px 0px #333; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+          box-shadow	: 0px 0px 5px 0px #333; /* Opera 10.5, IE9+, Firefox 4+, Chrome 6+, iOS 5 */
+}
+/*  ==================     Active     ================= */
+		section:hover .mainImg, section:active .mainImg{
+			border-color: #ea4c89;	
+		}
+		
+		section header a:hover h3{
+			color: #ea4c89;	
+		}
+/*  ==================     End Active     ================= */		
+		
+		
+	section header img{
+		float: left;
+		max-width: 50px;
+		border-radius: 50px;
+		border: .2em solid #dcdcdc;
+		margin: 1em;
+	}
+	section header a h3 {
+		color: #dcdcdc;
+	}
+	section header h4{
+		color: #aaa;
+		font-size: .8em;
+		font-weight: normal;
+	}
+		section header hgroup{
+			padding: 25px 25px 0 0;
+			text-align: right;
+		}
+	section .mainImg{
+		width: 100%; 
+		border-top: #dcdcdc solid 1px;
+		border-bottom: #dcdcdc solid 1px;
+	}
+
+	section footer{
+		color: #dcdcdc;
+		font-size: .8em;
+		font-weight: normal;
+		padding: .15em 0 .35em 0;
+	}
+
+
+section, a, img, header, h3, h4{
+
+	      -webkit-transition: all 0.3s ease-out;  /* Safari 3.2+, Chrome */
      -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
        -o-transition: all 0.3s ease-out;  /* Opera 10.5–12.00 */
           transition: all 0.3s ease-out;  /* Firefox 16+, Opera 12.50+ */
+	
 }
+
+
+/*  ==================     Gallery     ================= */
+	aside section{
+	    display: inline-block;
+	    max-width: 24%;
+	    margin: .25em;
+	    padding: 0 0 .5em 0;
+	}
+
+	aside section header img, aside h4, aside section footer{
+		display: none;
+	}
+	aside section header hgroup{	
+		padding: .25em 1em .35em 0;
+		font-size: .8em;
+	}
 
 .infoList li{
   display: inline-block;
   padding: 0 0 0 1.5em;
-  margin: 0 0 0 2em;
+  margin: 0 0 0 1.5em;
 }
 .infoList .likes{
   background: url("http://dribbble.com/images/icon-hearts.png") no-repeat left center;
 }
 .infoList .views{
   background: url("http://dribbble.com/images/icon-views.png") no-repeat left center;
+  padding: 0 0 0 2em;
+  margin: 0 0 0 1.25em;
 }
 .infoList .comments{
   background: url("http://dribbble.com/images/icon-comments.png") no-repeat left top;
@@ -51,3 +121,4 @@ http://dribbble.com/images/icon-comments-2x.png
 http://dribbble.com/images/icon-hearts-2x.png
 http://dribbble.com/images/icon-rebound-2x.png
 */
+

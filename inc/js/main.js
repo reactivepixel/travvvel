@@ -20,7 +20,8 @@ var dataStream,
 	maxPages				,
 	aryImgs 				= [],
 	durration_on_img 		= 10000,
-	durration_of_transition = 1000;
+	durration_of_transition = 1000,
+	htmlContent;
 
 function nextImg(){
 	imgData = dataStream.shots[imgIndex]
@@ -33,15 +34,23 @@ function nextImg(){
 							{"views" 			: imgData.views_count }
 						]
 
-	var mainImg = $('#mainDisp').transition({ opacity: 0 }, 0)
-		.html('<a href="' + imgData.short_url + '"><img src="' + imgData.image_url + '" /></a>')
-		.append( aryToUL( aryInfo, "infoList" ) )
-		.transition({ opacity: 100 }, durration_of_transition);
+console.log('xxx',aryInfo);
 
 	if(aryImgs.length > 1){
 		var prevImg = aryImgs[aryImgs.length-2];
-		var img = $("#gallery").prepend('<a href="' + prevImg.short_url + '"><img class="closed" src="' + prevImg.image_url + '" />');
+		var img = $("#gallery").prepend('<section>' + htmlContent + '</section>');
 	}
+	htmlContent = '<header><a href="'+ imgData.player.url +'"><img src="'+ imgData.player.avatar_url +'" /><hgroup><h3>'+ imgData.player.username +'</h3><h4>2,904 Followers</h4></hgroup></a></header><a href="' + imgData.short_url + '"><img class="mainImg" src="' + imgData.image_url + '" /></a><footer><ul class="infoList"><li class="likes"><span class="value">'+ aryInfo[0].likes +'</span></li><li class="comments"><span class="value">'+ aryInfo[1].comments +'</span></li><li class="views"><span class="value">'+ aryInfo[2].views +'</span></li></ul></footer>';
+	
+	var mainImg = $('#mainDisp').transition({ opacity: 0 }, 0)
+	
+
+		.html(htmlContent)
+
+/* 		.html('<a href="' + imgData.short_url + '"><img src="' + imgData.image_url + '" /></a>') */
+/* 		.append( aryToUL( aryInfo, "infoList" ) ) */
+		.transition({ opacity: 100 }, durration_of_transition);
+
 	
 	setTimeout(openImg(img), durration_on_img);
 	imgIndex++;
