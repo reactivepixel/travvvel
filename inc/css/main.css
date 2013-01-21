@@ -1,5 +1,7 @@
 body{
   font-size: 14px;
+  background: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/debut_dark.png');
+
 }
 *{
   margin: 0;
@@ -13,8 +15,9 @@ body{
 
 section{
 /* 	background: url('http://dribbble.s3.amazonaws.com/users/195619/screenshots/898396/dribbble_invite_800x600.png') no-repeat top center; */
-	background: #333;
-	
+/* 	background: rgba(17,17,17,0.5); */
+	background: -webkit-linear-gradient(rgba(55,47,43,1) 0%, rgba(39,33,30,1) 10%);
+
 	max-width: 49%;
 	margin: 1em 25% 1em 25%;
 	border-radius: 1em;
@@ -54,8 +57,8 @@ section{
 		}
 	section .mainImg{
 		width: 100%; 
-		border-top: #dcdcdc solid 1px;
-		border-bottom: #dcdcdc solid 1px;
+		border-top: #410d21 solid 3px;
+		border-bottom: #410d21 solid 3px;
 	}
 
 	section footer{
@@ -116,9 +119,31 @@ section, a, img, header, h3, h4{
 }
 
 /*
-http://dribbble.com/images/icon-views-2x.png
-http://dribbble.com/images/icon-comments-2x.png
-http://dribbble.com/images/icon-hearts-2x.png
-http://dribbble.com/images/icon-rebound-2x.png
+========   Header Bar
 */
 
+nav{
+	background: -webkit-linear-gradient(rgba(55,47,43,1) 0%, rgba(39,33,30,1) 100%);
+	padding: .5em 1em;
+}
+nav hgroup *{ 
+	display: inline-block; 
+	color:#aaa;
+	
+}
+nav h2{
+	color:#ea4c89;
+}
+nav h1{
+	font-size: 1em;
+	margin: 0 0 0 1em;
+	font-weight: normal;
+}
+	nav button{
+		float: right;
+		border: none;
+		color: #ea4c89;
+		padding: 0 1em;
+		background: none;
+		font-size: 1.25em;
+	}

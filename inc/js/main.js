@@ -6,11 +6,10 @@ $(document).ready(function() {
 		year		= t.getFullYear()
 		strToday	= year + "-" + month + "-" + day;
 
-	console.log("today", strToday)
-	// Returns, e.g., 6/09/07
+	console.log("today", strToday)							// Enhance further for caching - Returns, e.g., 6/09/07
 	
-	loadDribbleStream();
-	
+	loadDribbleStream();									// Fire off the events to load out
+	activatePlayPauseBtn();									// Called to ini the play btn
 });
 
 var dataStream,
@@ -21,6 +20,7 @@ var dataStream,
 	aryImgs 				= [],
 	durration_on_img 		= 10000,
 	durration_of_transition = 1000,
+	bPlayActivated			= true,
 	htmlContent;
 
 function nextImg(){
@@ -33,8 +33,6 @@ function nextImg(){
 							{"comments" 		: imgData.comments_count },
 							{"views" 			: imgData.views_count }
 						]
-
-console.log('xxx',aryInfo);
 
 	if(aryImgs.length > 1){
 		var prevImg = aryImgs[aryImgs.length-2];
@@ -81,12 +79,34 @@ function loadDribbleStream(){
 			dataStream = d;
 			maxPages = dataStream.pages;
 			nextImg();
-			intNext = setInterval(nextImg, durration_on_img);
+			//intNext = setInterval(nextImg, durration_on_img);
+			setTimer()
 		},
 		error		: function(d){
 			console.log("failure", d);
 		}
 	})
+}
+
+function setTimer(){
+	intNext = setInterval(nextImg, durration_on_img);
+}
+
+
+function activatePlayPauseBtn(){
+	var btn = $("#btnPlayPause");
+	btn.click(function(){
+		if(bPlayActivated){ 								// disable Auto Play
+			clearInterval(intNext);
+			bPlayActivated = false;
+			btn.html("Play")
+		} else {											// enable Auto Play
+			setTimer()
+			console.log('enable Play');
+			bPlayActivated = true;
+			btn.html("Pause")
+		}
+	});
 }
 
 // Basic Utilities
